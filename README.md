@@ -80,19 +80,22 @@ Protected Routes & Auth State
 # Getting Started — Run Locally
 
 ## 1️⃣ Clone the Repository
-git clone https://github.com/Shivp45/FullStack_Tasks_Manager.git
-cd fullstack-tasks-app
+1) git clone https://github.com/Shivp45/FullStack_Tasks_Manager.git
+2) cd fullstack-tasks-app
 
 ## 2️⃣ Backend Setup
-cd backend
-npm install
+1) cd backend
+2) npm install
 
 ### Create .env inside /backend:
 
 PORT=5000
+
 MONGO_URI=your_mongodb_uri_here
+
 JWT_SECRET=your_jwt_secret
-JWT_EXPIRES_IN=1d
+
+
 NODE_ENV=development
 
 
@@ -117,8 +120,8 @@ Health Check → http://localhost:5000/api/health
 ## 3️⃣ Frontend Setup
 Open a second terminal:
 
-cd frontend
-npm install
+1) cd frontend
+2) npm install
 
 
 ### Run the frontend:
@@ -133,8 +136,13 @@ http://localhost:5173/
 
 You can:
 
-Register new users
-Login
-Create / update / delete tasks
-Test protected routes
-View admin-only functionality (if assigned role = admin)
+1) Register new users
+
+2) Login
+
+3) Create / update / delete tasks
+
+4) Test protected routes
+
+5) View admin-only functionality (if assigned role = admin)
+
