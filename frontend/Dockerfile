@@ -1,5 +1,5 @@
 # ---- Build Stage ----
-FROM node:18-alpine as build
+FROM node:18-alpine AS build
 
 WORKDIR /app
 
@@ -9,16 +9,17 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-# ---- Production Stage ----
+# ---- Nginx Stage ----
 FROM nginx:stable-alpine
 
-# Remove default NGINX website
-RUN rm -rf /usr/share/nginx/html/*
+# remove default config
+RUN rm /etc/nginx/conf.d/default.conf
 
-# Copy React build output
+# copy custom nginx config
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# copy build output
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port used by NGINX
 EXPOSE 80
-
 CMD ["nginx", "-g", "daemon off;"]
