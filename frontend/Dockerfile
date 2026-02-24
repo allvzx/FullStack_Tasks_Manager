@@ -6,8 +6,6 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 
-ENV VITE_API_URL=http://backend:5000/api/v1
-
 COPY . .
 RUN npm run build
 
